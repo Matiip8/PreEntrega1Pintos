@@ -8,31 +8,41 @@ for (let i = 0; i <10; i++)  {
 
 let nombre = prompt("Introduzca su Nombre y Apellido.")
 
+
 let peso = prompt("Introduzca su peso en kg.")
 
-if (peso > 635) {
-    alert("El peso es incorrecto.")
+if (peso >25 && peso <680) {
+    
+    alert("Agregado a la calculadora.")}
+
+else if (peso == null || /\D/.test(peso) || peso== ""){
+    prompt("Dato incorrecto. Vuela a ingresar su peso en kg")
 }
-else {alert("Agregado a la calculadora.")}
+else {prompt("Error. Vuelava a intentar")}
 
 let estatura = prompt("Introduzca su estatura en mts.")
 
-if (estatura > 2.73) {
-    alert("La altura es incorrecta.")
-}
-else {alert("Agregado a la calculadora.")}
+if (estatura > 0.5 && estatura < 2.75) {alert("Agregado a la calculadora.")}
 
-alert("¡Calculando IMC! Por favor espere...")
+else if (estatura == null || /\D/.test(estatura) || estatura== ""){
+    prompt("Dato incorrecto. Vuela a ingresar su peso en kg")
+}
+else {prompt("Error. Vuelava a intentar")}
+
+
 
 let altura = Math.pow(estatura, 2)
-let imc2 = peso / altura 
-let imc = Math.round(imc2)
+
+function imc (peso, altura)
+{
+    return Math.round(peso / altura)
+}
 
 const datos = [
 
 {
     nombre: nombre,
-    imc: imc, 
+    imc: imc(peso, altura), 
 },
 
 {
