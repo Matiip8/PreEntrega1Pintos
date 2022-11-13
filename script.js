@@ -18,16 +18,16 @@ if (peso >25 && peso <680) {
 else if (peso == null || /\D/.test(peso) || peso== ""){
     prompt("Dato incorrecto. Vuela a ingresar su peso en kg")
 }
-else {prompt("Error. Vuelava a intentar")}
+else {prompt("Error. Vuelava a agregar su peso en kg")}
 
 let estatura = prompt("Introduzca su estatura en mts.")
 
 if (estatura > 0.5 && estatura < 2.75) {alert("Agregado a la calculadora.")}
 
 else if (estatura == null || /\D/.test(estatura) || estatura== ""){
-    prompt("Dato incorrecto. Vuela a ingresar su peso en kg")
+    prompt("Dato incorrecto. Vuela a ingresar su estatura en mts")
 }
-else {prompt("Error. Vuelava a intentar")}
+else {prompt("Error. Vuelava a agregar su estatura en mts")}
 
 
 
