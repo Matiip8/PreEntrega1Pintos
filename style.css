@@ -1,11 +1,17 @@
+  
+  
+  
+  
   body {
     transition: background-color 0.3s, color 0.3s;
+    
   }
   
   body.dark-mode {
     background-color: #1b0737;
     color: white;
   }
+
 
 h1 {
     padding-top: 20px;
@@ -69,4 +75,17 @@ margin-top: 20px;
   font-size: 10px;
   }
 
+  .info {
 
+    display:block;
+    text-align: center;
+    margin: 50px;
+  }
+
+  .info p {
+    margin-top: 30px;
+  }
+
+
+
+  
