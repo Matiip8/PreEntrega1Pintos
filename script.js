@@ -24,21 +24,30 @@ let imc = Math.round(peso / altura)
 
     const datos = [
 
-        {
+        { 
+    
+            imcMin: 0 ,
+            imcMax: 15,
             nombre : name ,
             imc: imc,
             parametro: ", estas en situacion de delgadez extrema.",
-            recomendaciones: "comer con mas frecuencia, incorporar mas proteina a tu dieta, entrenar la fuerza y contactarte con un profesional."
+            recomendaciones: "Deberias comer con mas frecuencia, incorporar mas proteina a tu dieta, entrenar la fuerza y contactarte con un profesional."
         },
         
         {
+         
+            imcMin: 15 ,
+            imcMax: 18.5,
             nombre : name ,
             imc: imc,
             parametro: ", tenes un peso debajo de lo normal.",
-            recomendaciones: "comer con mas frecuencia, incorporar mas proteina a tu dieta y entrenar la fuerza."
+            recomendaciones: "Deberias comer con mas frecuencia, incorporar mas proteina a tu dieta y entrenar la fuerza."
         },
         
         { 
+         
+            imcMin: 18.5 ,
+            imcMax: 25,
             nombre : name ,
             imc: imc,
              parametro: ", tenes un peso normal." ,
@@ -46,31 +55,43 @@ let imc = Math.round(peso / altura)
         },
             
         {
+        
+            imcMin: 25 ,
+            imcMax: 30,
             nombre : name ,
             imc: imc,
              parametro: ", tenes sobrepeso." , 
-             recomendaciones: "controlar tus ingestas, entrenar la fuerza y aumentar tu actividad fisica."
+             recomendaciones: "Deberias controlar tus ingestas, entrenar la fuerza y aumentar tu actividad fisica."
         },
         
         {
+        
+            imcMin: 30 ,
+            imcMax: 35,
             nombre : name ,
             imc: imc,
              parametro: ", tenes obesidad grado 1.",
-             recomendaciones: "controlar tus ingestas, entrena la fuerza, aumentar tu actividad fisica, evitar el sedentarismo y buscar ayuda de un profesional."
+             recomendaciones: "Deberias controlar tus ingestas, entrena la fuerza, aumentar tu actividad fisica, evitar el sedentarismo y buscar ayuda de un profesional."
         },
         
           { 
+    
+            imcMin: 35 ,
+            imcMax: 40,
             nombre : name ,
             imc: imc,
             parametro:", tenes obesidad grado 2." ,
-            recomendaciones: "controlar tus ingestas, entrena la fuerza, aumentar tu actividad fisica, evitar el sedentarismo y buscar ayuda de un profesional."
+            recomendaciones: "Deberias controlar tus ingestas, entrena la fuerza, aumentar tu actividad fisica, evitar el sedentarismo y buscar ayuda de un profesional."
         },
         
           {
+    
+            imcMin: 40 ,
+            imcMax: 210,
             nombre : name ,
             imc: imc,
             parametro: ", tenes obesidad grado 3.",
-          recomendaciones: "controlar tus ingestas, entrena la fuerza, aumentar tu actividad fisica, evitar el sedentarismo y buscar ayuda de un profesional."
+          recomendaciones: "Deberias controlar tus ingestas, entrena la fuerza, aumentar tu actividad fisica, evitar el sedentarismo y buscar ayuda de un profesional."
         },
         
         
@@ -78,47 +99,13 @@ let imc = Math.round(peso / altura)
          ] 
 
      
+        const indice = datos.find(datos => datos.imc >= datos.imcMin && datos.imc < datos.imcMax);
+        document.getElementById ('conteiner').innerHTML = "Hola " + indice.nombre + " tu IMC es de " + indice.imc + indice.parametro + " " + indice.recomendaciones  
+    }
 
 
     
-    if ( datos.some (datos => datos.imc >0 && datos.imc <15) ) {
-        document.getElementById ('conteiner').innerHTML = "Hola " + datos[0].nombre + " tu IMC es de " + datos[0].imc + datos[0].parametro + " Deberias " + datos[0].recomendaciones  }
-    
-        
-        
-    else if ( datos.some (datos => datos.imc >= 15 && datos.imc <18.5) ) { 
-        document.getElementById ('conteiner').innerHTML =  "Hola " + datos[1].nombre + " tu IMC es de " + datos[1].imc + datos[1].parametro + " Deberias " + datos[1].recomendaciones  }
-    
-        
-    
-    else if ( datos.some (datos => datos.imc >= 18.5 && datos.imc <25) ) {
-        document.getElementById ('conteiner').innerHTML = "Hola " + datos[2].nombre + " tu IMC es de " + datos[2].imc + datos[2].parametro + datos[2].recomendaciones  }
-    
-        
-    
-    else if ( datos.some (datos => datos.imc >= 25 && datos.imc <30) ) {
-        document.getElementById ('conteiner').innerHTML = "Hola " + datos[3].nombre + " tu IMC es de " + datos[3].imc + datos[3].parametro+ " Deberias " + datos[3].recomendaciones  }
-    
-    
-            
-    else if ( datos.some (datos => datos.imc >= 30 && datos.imc <35) ) {
-        document.getElementById ('conteiner').innerHTML = "Hola " + datos[4].nombre + " tu IMC es de " + datos[4].imc + datos[4].parametro + " Deberias " + datos[4].recomendaciones }
-    
-    
-    else if ( datos.some (datos => datos.imc >= 35 && datos.imc <40 )) {
-        document.getElementById ('conteiner').innerHTML = "Hola " + datos[5].nombre + " tu IMC es de " + datos[5].imc + datos[5].parametro + " Deberias " + datos[5].recomendaciones  }
-    
-        
-        else if ( datos.some (datos => datos.imc >= 40) ) {
-            document.getElementById ('conteiner').innerHTML = "Hola " + datos[6].nombre + " tu IMC es de " + datos[6].imc + datos[6].parametro + " Deberias " + datos[6].recomendaciones  }
-        
-            else {
-                document.getElementById ('conteiner').innerHTML = "Los datos fueron incorrectos."  }
 
-
-
-            
-            }
 
             
             const botonColorMode = document.querySelector("#color-mode");
@@ -173,3 +160,4 @@ toastify.addEventListener("click", () => {
 })
 
 
+    
